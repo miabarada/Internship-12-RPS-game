@@ -137,3 +137,33 @@ h2 {
    font-weight: 600;
    justify-self: center;
 }
+
+.review-area {
+   display: none;
+   padding: 32px;
+   background-color: #090a0f;
+   border-radius: 16px;
+}
+
+.review-area.show {
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+}
+
+.review-round {
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+}
+
+h3 {
+   color: white;
+   size: 20px;
+}
+
+p {
+   color: white;
+   font-size: 16px;
+}
+

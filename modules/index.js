@@ -108,10 +108,18 @@ btnReview.addEventListener('click', async () => {
    }
 
    try {
+      reviewArea.style.display = 'block';
+      reviewArea.classList.add('show');
+
       const ids = gameRounds.map(round => round.id);
       const rounds = await getMultipleRounds(ids);
 
       reviewArea.innerHTML = "";
+
+      const title = document.createElement("h2");
+      title.innerText = `Pregled runde`;
+      reviewArea.appendChild(title);
+
       reviewArea.style.display = "block";
 
       let wins = 0;
