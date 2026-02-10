@@ -1,7 +1,139 @@
-.game-area {
-   display: none;
+* {
+   padding: 0;
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
 }
 
-.btn-next {
+.container {
+   padding: 40px 40px;
+   background-color: #191b29;
+}
+
+h1 {
+   justify-self: center;
+   color: white;
+   font-size: 40px;
+}
+
+.features {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 16px;
+   padding: 32px 0px;
+}
+
+.btn-feature {
+   background-color: #406E8E;
+   border: none;
+   padding: 24px 0;
+   border-radius: 8px;
+   font-size: 20px;
+   color: white;
+   font-weight: 600;
+   cursor: pointer;
+}
+
+.btn-feature:disabled {
+   opacity: 0.5;
+   cursor: auto;
+}
+
+.btn-feature:hover {
+   background-color: #243e50;
+}
+
+.btn-feature:disabled:hover {
+   background-color: #406E8E;
+}
+
+.game-area {
    display: none;
+   flex: 1;
+   padding: 32px;
+   background-color: #090a0f;
+   border-radius: 16px;
+   height: 340px;
+}
+
+.game-area.show {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.game-area.green-border {
+   border: 4px solid greenyellow;
+}
+
+.game-area.red-border {
+   border: 4px solid red;
+}
+
+.game-area.beige-border {
+   border: 4px solid beige;
+}
+
+h2 {
+   justify-self: center;
+   color: white;
+   font-size: 32px;
+}
+
+.game-choices {
+   display: flex;
+   flex-direction: row;
+   gap: 16px;
+   padding: 16px;
+   padding-top: 24px;
+   justify-self: center;
+}
+
+.icon {
+   width: 120px;
+}
+
+.btn-choice {
+   width: 160px;
+   height: 160px;
+   background-color: #ebba91;
+   border: none;
+   cursor: pointer;
+   border-radius: 8px;
+}
+
+.btn-choice:hover {
+   background-color: #a78060;
+}
+
+.btn-choice:disabled:hover {
+   background-color: #ebba91;
+   cursor: auto;
+}
+
+.next {
+   justify-self: center;
+}
+
+.next-round {
+   background-color: #ebba91;
+   color: white;
+   width: 512px;
+   height: 40px;
+   font-weight: 600;
+   font-size: 16px;
+   border: none;
+   border-radius: 8px;
+}
+
+.next-round:hover {
+   background-color: #a78060;
+   cursor: pointer;
+}
+
+.round-result {
+   color: white;
+   padding-top: 24px;
+   font-size: 24px;
+   font-weight: 600;
+   justify-self: center;
 }

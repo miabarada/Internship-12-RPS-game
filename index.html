@@ -6,27 +6,26 @@
    <title>RPS Game</title>
    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-   <h1>Kamen Škare Papir</h1>
+<body class="container">
+   <h1>KAMEN ŠKARE PAPIR</h1>
 
    <div class="features">
-      <button class="btn-create">Stvori novu igru</button>
-      <button class="btn-start" disabled>Pokreni igru</button>
-      <button class="btn-review">Pregledaj igru</button>
+      <button class="btn-create btn-feature">Stvori novu igru</button>
+      <button class="btn-start btn-feature" disabled>Pokreni igru</button>
+      <button class="btn-review btn-feature">Pregledaj igru</button>
    </div>
 
    <section class="game-area">
       <h2 class="round-counter">Runda: 1 / 5</h2>
       <div class="game-choices">
-         <button class="btn-choice" data-choice="kamen">Kamen</button>
-         <button class="btn-choice" data-choice="škare">Škare</button>
-         <button class="btn-choice" data-choice="papir">Papir</button>
+         <button class="btn-choice" data-choice="kamen"><img src="assets/rock.png" alt="rock" class="icon"></button>
+         <button class="btn-choice" data-choice="škare"><img src="assets/scissors.png" alt="scissors" class="icon"></button>
+         <button class="btn-choice" data-choice="papir"><img src="assets/paper.png" alt="paper" class="icon"></button>
       </div>
       <div class="next">
-         <button class="next-round">Next round</button>
+         <button class="next-round">Sljedeća runda</button>
       </div>
       <div class="round-result"></div>
-      <button class="btn-next">Sljedeća runda</button>
    </section>
 
    <section class="review-area"></section>

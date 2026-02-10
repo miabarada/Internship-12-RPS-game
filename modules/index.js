@@ -49,6 +49,7 @@ btnStart.addEventListener('click', () => {
       return alert("Prvo kreiraj novu igru!");
    }
    gameArea.style.display = 'block';
+   gameArea.classList.add('show');
    currentRoundIndex = 0;
    updateUI();
 });
@@ -74,11 +75,24 @@ choiceButtons.forEach(button => {
       const message = currentRound.getWinner();
       roundResult.innerText = `Bot je odabrao: ${currentRound.botMove}. ${message}`;
 
+      if(message === "Pobijedili ste ovu rundu!")
+         gameArea.classList.add('green-border');
+
+      if(message === "Neriješeno!")
+         gameArea.classList.add('beige-border');
+
+      if(message === "Izgubili ste ovu rundu!")
+         gameArea.classList.add('red-border');
+
       btnNext.style.display = 'block';
    });
 });
 
 btnNext.addEventListener('click', () => {
+   gameArea.classList.remove('green-border');
+   gameArea.classList.remove('red-border');
+   gameArea.classList.remove('beige-border');
+
    if (currentRoundIndex < 4) {
       currentRoundIndex++;
       updateUI();
