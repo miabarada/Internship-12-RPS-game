@@ -12,9 +12,9 @@ export class Round {
          return "Neriješeno!";
 
       const winConditions = {
-         rock: "scissors",
-         scissors: "paper",
-         paper: "rock"
+         kamen: "škare",
+         škare: "papir",
+         papir: "kamen"
       };
 
       if (winConditions[this.playerMove] === this.botMove)

@@ -28,7 +28,7 @@ async function updateRound(id, updatedData) {
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({
             name: "Internship_RPS_Game", 
-            data: roundData
+            data: updatedData
          }),
       });
 
@@ -44,7 +44,7 @@ async function updateRound(id, updatedData) {
 
 async function getMultipleRounds(ids) {
    try {
-      const idString = ids.map(id =Y `id=${id}`).join('&');
+      const idString = ids.map(id => `id=${id}`).join('&');
       const response = await fetch(`${API_URL}?${idString}`);
 
       if (!response.ok)
