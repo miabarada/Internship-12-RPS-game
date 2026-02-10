@@ -9,24 +9,24 @@
 <body>
    <h1>Kamen Škare Papir</h1>
 
-   <div id="features">
-      <button id="btn-create">Create new game</button>
-      <button id="btn-start">Start game</button>
-      <button id="btn-review">Review game</button>
+   <div class="features">
+      <button class="btn-create">Create new game</button>
+      <button class="btn-start" disabled>Start game</button>
+      <button class="btn-review">Review game</button>
    </div>
 
-   <section id="game-area">
-      <h2 id="round-counter">Runda: 1 / 5</h2>
+   <section class="game-area">
+      <h2 class="round-counter">Runda: 1 / 5</h2>
       <div class="game-choices">
          <button class="btn-choice" data-choice="rock">Kamen</button>
          <button class="btn-choice" data-choice="scissors">Škare</button>
          <button class="btn-choice" data-choice="paper">Papir</button>
       </div>
-      <div id="round-result"></div>
-      <button id="btn-next">Sljedeća runda</button>
+      <div class="round-result"></div>
+      <button class="btn-next">Sljedeća runda</button>
    </section>
 
-   <section id="review-section"></section>
+   <section class="review-section"></section>
 
    <script type="module" src="./modules/index.js"></script>
 </body>

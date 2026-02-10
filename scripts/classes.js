@@ -17,7 +17,7 @@ export class Round {
          paper: "rock"
       };
 
-      if (winConditions[this.playerMove] === this.computerMove)
+      if (winConditions[this.playerMove] === this.botMove)
          return "Pobijedili ste ovu rundu!";
       else
          return "Izgubili ste ovu rundu!";

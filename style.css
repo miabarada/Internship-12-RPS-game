@@ -1,7 +1,7 @@
-#game-area {
+.game-area {
    display: none;
 }
 
-#btn-next {
+.btn-next {
    display: none;
 }
