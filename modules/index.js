@@ -1,4 +1,4 @@
-import { createRound, updateRound } from "./api.js";
+import { createRound, getMultipleRounds, updateRound } from "./api.js";
 import { Round } from "../scripts/classes.js";
 import { getRandomMove } from "../scripts/callbacks.js";
 
@@ -9,6 +9,8 @@ const roundCounter = document.querySelector('.round-counter');
 const roundResult = document.querySelector('.round-result');
 const btnNext = document.querySelector('.next-round');
 const choiceButtons = document.querySelectorAll('.btn-choice');
+const btnReview = document.querySelector('.btn-review');
+const reviewArea = document.querySelector('.review-area');
 
 let gameRounds = [];
 let currentRoundIndex = 0;
@@ -83,6 +85,52 @@ btnNext.addEventListener('click', () => {
    } else {
       alert("Odigrali ste svih 5 rundi! Odaberite Review za rezultate.");
       gameArea.style.display = 'none';
+   }
+});
+
+btnReview.addEventListener('click', async () => {
+   if(!gameRounds || gameRounds.length < 5) {
+      return alert("Nema igre za pregled");
+   }
+
+   try {
+      const ids = gameRounds.map(round => round.id);
+      const rounds = await getMultipleRounds(ids);
+
+      reviewArea.innerHTML = "";
+      reviewArea.style.display = "block";
+
+      let wins = 0;
+
+      rounds.forEach((roundData, index) => {
+         const round = new Round(
+            roundData.id,
+            roundData.data.botMove,
+            roundData.data.playerMove
+         );
+
+         const result = round.getWinner();
+         if (result.includes("Pobijedili")) 
+            wins++;
+
+         const roundEl = document.createElement("div");
+         roundEl.classList.add("review-round");
+
+         roundEl.innerHTML = `
+            <h3>Runda ${index + 1}</h3>
+            <p>Igrač: ${round.playerMove}</p>
+            <p>Bot: ${round.botMove}</p>
+            <p>Rezultat: ${result}</p> `;
+
+         reviewArea.appendChild(roundEl);
+      });
+
+      const summary = document.createElement("h2");
+      summary.innerText = `Ukupan rezultat: ${wins} / 5`;
+      reviewArea.appendChild(summary);
+   } catch (error) {
+      console.error(error);
+      alert("Greška pri dohvaćanju reviewa.");
    }
 });
 
