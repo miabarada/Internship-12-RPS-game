@@ -155,6 +155,7 @@ h2 {
    display: flex;
    flex-direction: column;
    gap: 4px;
+   padding: 24px;
 }
 
 h3 {
